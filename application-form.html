@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Application Form</title>
     <link rel="stylesheet" href="css/application-css.css">
-    <!-- <script src="js/form.js"></script> -->
 </head>
 
 <body>
@@ -63,6 +62,24 @@
 
 
         <div class="box">
+            <label for="department">Department
+            </label>
+            <select id="department" name="department">
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electronics Engineering">Electronics Engineering</option>
+                <option value="Chemical Engineering">Chemical Engineering</option>
+            </select>
+        </div>
+
+        <div class="box">
+            <label for="specialization">Specialization
+            </label>
+            <select name="specialization" id="specialization">
+
+            </select>
+        </div>
+
+        <div class="box">
             <label>PWD Category</label>
             <input type="text" name="pwd_category" id="name" required>
         </div>
@@ -88,10 +105,48 @@
 
         <!-- Below link is only for checking purposes, hence can be removed -->
 
-        <div><a href="login-page.html">LOGIN</a></div>
+        <!-- <div><a href="login-page.html">LOGIN</a></div> -->
     </form>
 
+    <div>
+        {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> {{msg.message}}
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 
+    <script type="text/javascript">
+        setTimeout(function() {
+            $('.messages').fadeOut('fast');
+        }, 10000);
+
+        function getSpecializations() {
+
+            var x = document.getElementById("department").value;
+            var items;
+            if (x === "Computer Science") {
+                items = ["Machine Learning", "Web development"];
+            } else if (x === "Electronics Engineering") {
+                items = ["Robotics", "Chip Designing"]
+            } else {
+                items = ["Power Plant", "Petroleum Industry"]
+            }
+
+            var str = ""
+
+            for (var item of items) {
+                str += "<option value='" + item + "'>" + item + "</option>"
+            }
+            document.getElementById("specialization").innerHTML = str;
+        }
+
+        document.getElementById("department").addEventListener("click", getSpecializations)
+    </script>
 
 </body>
 

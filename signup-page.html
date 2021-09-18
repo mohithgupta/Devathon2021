@@ -21,6 +21,7 @@
             <div class="form-inner">
 
                 <form action="#" class="signup" method="post">
+                    {% csrf_token %}
 
                     <div class="field">
                         <input type="text" placeholder="Name" required autofocus>
@@ -54,11 +55,26 @@
             </div>
         </div>
     </div>
+    <div>
+        {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> {{msg.message}}
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 
     <script type="text/javascript">
         var password = document.getElementById('password');
         var confirmPassword = document.getElementById('passwordConfirm');
         var submit = document.getElementById('submit');
+
+        setTimeout(function() {
+            $('.messages').fadeOut('fast');
+        }, 10000); // <-- time in milliseconds
 
         function check() {
             if (password.value !== confirmPassword.value) {

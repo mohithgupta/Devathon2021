@@ -18,6 +18,9 @@
         <div class="form-container">
             <div class="form-inner">
                 <form action="url here" class="login" method="post">
+
+                    {% csrf_token %}
+
                     <div class="field">
                         <input type="email" name="email" placeholder="Email Address" required>
                     </div>
@@ -37,8 +40,26 @@
             </div>
         </div>
     </div>
+
+    <div>
+        {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> {{msg.message}}
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
     <!-- Below link is only for checking purposes, hence can be removed -->
     <div><a href="application-form.html">Application</a></div>
+
+    <script type="text/javascript">
+        setTimeout(function() {
+            $('.messages').fadeOut('fast');
+        }, 10000); // <-- time in milliseconds
+    </script>
 
 </body>
 
