@@ -64,7 +64,8 @@
         <div class="box">
             <label for="department">Department
             </label>
-            <select id="department" name="department">
+            <select id="department" name="department" required>
+                <option value="none" selected disabled hidden>Select your Department</option>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Electronics Engineering">Electronics Engineering</option>
                 <option value="Chemical Engineering">Chemical Engineering</option>
@@ -74,8 +75,19 @@
         <div class="box">
             <label for="specialization">Specialization
             </label>
-            <select name="specialization" id="specialization">
+            <select name="specialization" id="specialization" required>
 
+            </select>
+        </div>
+
+        <div class="box">
+            <label for="reservation_category">Category
+            </label>
+            <select id="reservation_category" name="reservation_category">
+                <option value="OC">OC</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
             </select>
         </div>
 
