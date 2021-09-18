@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="css/application-css.css">
+    <!-- <script src="js/form.js"></script> -->
+</head>
+
+<body>
+
+
+
+    <form name="Form">
+        <h2>Application Form</h2>
+        <div class="box">
+            <label>Application Id</label>
+            <input type="text" name="application_id" required>
+        </div>
+
+        <div class="box">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="box">
+            <label>Date of Birth</label>
+            <input type="date" name="DoB" required>
+        </div>
+
+        <!-- 'application_id','name','DoB','Aadhar','Passport','Address','gender','pwd_category',
+    'documents','passport_pic','Notes -->
+
+
+        <div class="box">
+            <label>Aadhar Number</label>
+            <input type="number" name="Aadhar" required>
+        </div>
+
+        <div class="box">
+            <label>Passport</label>
+            <input type="number" name="Passport" required>
+        </div>
+
+        <div class="box">
+            <label>Address</label>
+            <input type="text" name="Address" required>
+        </div>
+
+        <div class="box">
+            <label>Gender</label>
+            <div class="form-inline" id="gender">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+            <div class="error" id="genderErr"></div>
+        </div>
+
+
+        <!-- 'application_id','name','DoB','Aadhar','Passport','Address','gender','pwd_category',
+    'documents','passport_pic','Notes -->
+
+
+        <div class="box">
+            <label>PWD Category</label>
+            <input type="text" name="pwd_category" id="name" required>
+        </div>
+
+        <div class="box">
+            <label>Documents</label>
+            <input type="file" accept="application/pdf" name="documents" id="name" required>
+        </div>
+
+        <div class="box">
+            <label>Passport Pic</label>
+            <input type="file" accept="image/png, image/jpeg, image/jpg" name="passport_pic" id="name" required>
+        </div>
+
+        <div class="box">
+            <label>Notes</label>
+            <input type="text" name="Notes" id="name" required>
+        </div>
+
+        <div class="box">
+            <input type="submit" value="Submit">
+        </div>
+
+        <!-- Below link is only for checking purposes, hence can be removed -->
+
+        <div><a href="login-page.html">LOGIN</a></div>
+    </form>
+
+
+
+</body>
+
+</html>
