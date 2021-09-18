@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Application Form</title>
     <link rel="stylesheet" href="css/application-css.css">
+    <link rel="text/javascript" href="js/form.js">
 </head>
 
 <body>
@@ -21,6 +22,12 @@
         <div class="box">
             <label>Full Name</label>
             <input type="text" name="name" required>
+        </div>
+
+        <div class="box">
+            <label>Email</label>
+            <input type="text" name="email">
+            <div id="emailErr"></div>
         </div>
 
         <div class="box">
@@ -112,7 +119,7 @@
         </div>
 
         <div class="box">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submit-btn">
         </div>
 
         <!-- Below link is only for checking purposes, hence can be removed -->
@@ -134,7 +141,7 @@
 
     <script type="text/javascript">
         setTimeout(function() {
-            $('.messages').fadeOut('fast');
+            $('messages').fadeOut('fast');
         }, 10000);
 
         function getSpecializations() {

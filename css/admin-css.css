@@ -1,6 +1,6 @@
 body,
 html {
-    background-color: #748ace;
+    background-color: #fff;
 }
 
 .body-div {
@@ -43,11 +43,10 @@ h1 {
 }
 
 .pending-application-btn {
-    border-radius: 8px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    cursor: pointer;
+    /* border-radius: 8px; */
+    /* padding: 10px; */
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: #000;
 }
 
 .modal {
