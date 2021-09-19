@@ -15,19 +15,11 @@
             background-color: lavender;
         }
         
-        .messages {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 10px;
-        }
-        
         .msg-div {
             border: #000 2px solid;
             width: 300px;
             background-color: #999;
-            justify-self: center;
+            margin: 0 auto;
             padding: 10px;
             position: relative;
         }
@@ -69,23 +61,23 @@
     <h1>Find out your Application Status here</h1>
     <div>
         {% if messages %}
-        <div class="messages">
 
-            <div class="msg-div" id="msg-div">
-                {% for msg in messages %}
+        <div class="msg-div" id="msg-div">
+            {% for msg in messages %}
 
-                <span class="close" id="close">&times;</span>
+            <span class="close" id="close">&times;</span>
 
-                <div class="status-msg">
-                    {{msg.message}}
-                </div>
-
+            <div class="status-msg">
+                {{msg.message}}
             </div>
 
-            {% endfor %}
+            <br> {% endfor %}
         </div>
+
         {% endif %}
     </div>
+
+    <br><br><br>
 
     <form method="GET">
         <label for="app">Application Id: </label>
