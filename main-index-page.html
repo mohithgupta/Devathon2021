@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Page</title>
+
+    <style>
+        .wraper-div {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .admin-btn {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            border-radius: 8px;
+            background-color: #fff;
+            border: none;
+            text-decoration: underline;
+            color: #3498db;
+            padding: 10px;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+        
+        .admin-btn:hover,
+        .apply-link:hover,
+        .admin-login-signup-div a:hover {
+            background-color: #57a2d4;
+            color: #fff;
+        }
+        
+        .apply-link {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            text-decoration: none;
+            border-radius: 8px;
+            background-color: #fff;
+            border: #3498db 2px solid;
+            color: #3498db;
+            padding: 8px;
+            font-size: 1.4rem;
+        }
+        
+        .admin-login-signup-div {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+        
+        .admin-login-signup-div a {
+            text-decoration: none;
+            border-radius: 8px;
+            background-color: #fff;
+            border: #3498db 2px solid;
+            color: #3498db;
+            padding: 8px;
+            font-size: 1.4rem;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper-div">
+
+        <button class="btn admin-btn" id="admin-btn">Admin?? </button>
+
+        <div class="admin-login-signup-div">
+            <a href="login-page.html">Login</a>
+            <a href="signup-page.html">Signup</a>
+        </div>
+
+        <a href="application-form.html" class="apply-link" id="apply-link">Apply for Registration Number</a>
+
+    </div>
+
+    <script type="text/javascript">
+        var admin_btn = document.getElementById("admin-btn");
+        var apply_link = document.getElementById("apply-link");
+
+        admin_btn.onclick = function() {
+            if (apply_link.style.display != "none") {
+                apply_link.style.display = "none";
+                admin_btn.innerText = "Not an Admin ??";
+            } else {
+                apply_link.style.display = "inline-block";
+                admin_btn.innerText = "Admin??";
+            }
+        }
+    </script>
+</body>
+
+</html>
