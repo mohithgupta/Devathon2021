@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Details</title>
+
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            background-color: lightblue;
+        }
+        
+        div {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(9, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 10px;
+        }
+        
+        p {
+            border: #000 1px solid;
+            justify-self: center;
+            min-width: 200px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Application Details</h1>
+
+    <div>
+        <p>{{app.applicationId}}</p>
+        <p>{{app.name}}</p>
+        <p>{{app.DoB}}</p>
+        <p>{{app.Aadhar}}</p>
+        <p>{{app.department}}</p>
+        <p>{{app.specialization}}</p>
+        <p>{{app.Passport}}</p>
+        <p>{{app.gender}}</p>
+        <p>{{app.reservation_category}}</p>
+    </div>
+
+</body>
+
+</html>
