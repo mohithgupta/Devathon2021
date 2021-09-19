@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body,
+        html {
+            text-align: center;
+            padding: 20px;
+            background-color: lavender;
+        }
+        
+        .messages {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 10px;
+        }
+        
+        .msg-div {
+            border: #000 2px solid;
+            width: 300px;
+            background-color: #999;
+            justify-self: center;
+            padding: 10px;
+            position: relative;
+        }
+        
+        span {
+            font-size: 2rem;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+        
+        label {
+            font-size: 1.1rem;
+        }
+        
+        input {
+            font-size: 1.1rem;
+            padding: 8px;
+        }
+        
+        input[type="submit"] {
+            margin: 20px;
+            border-radius: 4px;
+            background-color: #fff;
+            padding: 6px;
+            cursor: pointer;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Find out your Application Status here</h1>
+    <div>
+        {% if messages %}
+        <div class="messages">
+
+            <div class="msg-div" id="msg-div">
+                {% for msg in messages %}
+
+                <span class="close" id="close">&times;</span>
+
+                <div class="status-msg">
+                    {{msg.message}}
+                </div>
+
+            </div>
+
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <form method="GET">
+        <label for="app">Application Id: </label>
+        <input id="app" name="applicationId" placeholder="Your ApplicationId">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+    <p>{{message}}</p>
+
+    <script>
+        setTimeout(function() {
+            $('.messages').fadeOut('fast');
+        }, 10000);
+
+        var close = document.getElementById("close");
+
+        close.onclick = function() {
+            document.getElementById("msg-div").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
